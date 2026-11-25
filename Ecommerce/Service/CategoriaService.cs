@@ -3,10 +3,8 @@ using Ecommerce.Models;
 
 namespace Ecommerce.Services;
 
-/// <summary>
 /// O "cozinheiro" das categorias: conhece as regras do negócio.
 /// Não sabe nada de HTTP nem de Entity Framework.
-/// </summary>
 public class CategoriaService : ICategoriaService
 {
     private readonly ICategoriaRepository _repositorio;
@@ -107,8 +105,8 @@ public class CategoriaService : ICategoriaService
         return true;
     }
 
-    // As regras de negócio moram aqui, num lugar só.
-    // idIgnorado: no PUT, a própria categoria não conta como duplicada.
+    // As regras de negócio moram aqui num lugar só
+    // idIgnorado: no PUT a própria categoria não conta como duplicada
     private async Task ValidarRegrasAsync(CategoriaRequest request, int? idIgnorado)
     {
         // Regra 1: o nome da categoria é único
