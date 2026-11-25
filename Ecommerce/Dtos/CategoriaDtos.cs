@@ -2,7 +2,7 @@
 
 namespace Ecommerce.Dtos;
 
-/// <summary>O que o cliente envia para criar/atualizar uma categoria.</summary>
+/// O que o cliente envia para criar/atualizar uma categoria
 public class CategoriaRequest
 {
     [Required(ErrorMessage = "O nome é obrigatório.")]
@@ -12,7 +12,7 @@ public class CategoriaRequest
     public string Descricao { get; set; } = string.Empty;
 }
 
-/// <summary>O que a API devolve sobre uma categoria.</summary>
+/// O que a API devolve sobre uma categoria
 public class CategoriaResponse
 {
     public int Id { get; set; }
