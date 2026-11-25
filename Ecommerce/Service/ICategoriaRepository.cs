@@ -2,10 +2,8 @@
 
 namespace Ecommerce.Services;
 
-/// <summary>
-/// O que o serviço precisa saber sobre as categorias guardadas.
-/// Nada aqui fala de banco, SQL ou Entity Framework.
-/// </summary>
+/// O que o serviço precisa saber sobre as categorias guardadas
+/// Nada aqui fala de banco SQL ou Entity Framework
 public interface ICategoriaRepository
 {
     Task<List<Categoria>> ListarAsync();
@@ -23,6 +21,6 @@ public interface ICategoriaRepository
     void Adicionar(Categoria categoria);
     void Remover(Categoria categoria);
 
-    // Grava de uma vez tudo o que foi adicionado, alterado ou removido
+    // Grava de uma vez tudo o que foi adicionado alterado ou removido
     Task SalvarAsync();
 }
