@@ -31,13 +31,13 @@ namespace Ecommerce
             builder.Services.AddScoped<ICategoriaService, CategoriaService>();
             builder.Services.AddScoped<IProdutoService, ProdutoService>();
 
-            // Swagger: gera a documentação da API e uma página para testar os endpoints
+            
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             var app = builder.Build();
 
-            // Em desenvolvimento, habilita a página do Swagger em /swagger
+            
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
