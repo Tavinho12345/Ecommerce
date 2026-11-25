@@ -18,12 +18,10 @@ namespace Ecommerce
             builder.Services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-            // ---------- Injeção de dependência ----------
-            // Leia como: "quando alguém pedir a INTERFACE, entregue esta IMPLEMENTAÇÃO".
             // Scoped: um objeto por requisição HTTP. Os repositórios da mesma requisição
             // recebem o MESMO AppDbContext.
 
-            // Repositórios (acesso a dados): para trocar de banco, só estas linhas mudam
+            // Repositórios (acesso a dados): para trocar de banco só mudar essas linhas
             builder.Services.AddScoped<ICategoriaRepository, CategoriaRepositoryEf>();
             builder.Services.AddScoped<IProdutoRepository, ProdutoRepositoryEf>();
 
