@@ -4,9 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Ecommerce.Data;
 
-/// <summary>
 /// Implementação do contrato usando Entity Framework Core.
-/// </summary>
 public class CategoriaRepositoryEf : ICategoriaRepository
 {
     private readonly AppDbContext _context;
@@ -28,7 +26,7 @@ public class CategoriaRepositoryEf : ICategoriaRepository
 
     public async Task<Categoria?> ObterComProdutosAsync(int id)
     {
-        // Include: traz os produtos junto, na mesma consulta (JOIN)
+        // Include: traz os produtos junto na mesma consulta (JOIN)
         return await _context.Categorias
             .Include(c => c.Produtos)
             .FirstOrDefaultAsync(c => c.Id == id);
