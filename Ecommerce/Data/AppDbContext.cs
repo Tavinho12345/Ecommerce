@@ -5,7 +5,7 @@ namespace Ecommerce.Data;
 
 public class AppDbContext : DbContext
 {
-    // As opções (qual banco, onde está) vêm do Program.cs
+    // As opções (qual banco onde está) vêm do Program.cs
     public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
     {
     }
